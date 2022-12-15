@@ -1,0 +1,8 @@
+WARNING: Ignoring invalid distribution - (/home/miniconda/envs/310/lib/python3.7/site-packages)
+WARNING: Ignoring invalid distribution -e (/home/miniconda/envs/310/lib/python3.7/site-packages)
+CMake Error: The current CMakeCache.txt directory /home/stu/zjc/fix/ByteTrackMot/ascend310_infer/out/CMakeCache.txt is different than the directory /home/stu/zjc/ByteTrackMot/ascend310_infer/out where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "/home/stu/zjc/fix/ByteTrackMot/ascend310_infer/CMakeLists.txt" does not match the source "/home/stu/zjc/ByteTrackMot/ascend310_infer/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/stu/zjc/ByteTrackMot/ascend310_infer/out
+[100%] Built target main

@@ -1,0 +1,3 @@
+/home/stu/zjc/ByteTrackMot/ascend310_infer/out/CMakeFiles/rebuild_cache.dir
+/home/stu/zjc/ByteTrackMot/ascend310_infer/out/CMakeFiles/edit_cache.dir
+/home/stu/zjc/ByteTrackMot/ascend310_infer/out/CMakeFiles/main.dir

@@ -1,0 +1,104 @@
+backbone: "yolox_x" #option for backbone, you can choose 'yolox_darknet53' or 'yolox_x'
+data_aug: True
+# path for local
+device_target: "Ascend"
+# /home/work/user-job-dir/outputs/model/
+outputs_dir: "./"
+# ======================================================
+# Train option
+save_graphs: False
+lr_scheduler: "yolox_warm_cos_lr"
+max_epoch: 70
+total_epoch: 80
+data_dir: "/home/work/user-job-dir/inputs/data/"
+# last no data aug related
+yolox_no_aug_ckpt: ""
+need_profiler: 0
+fintune: True
+pretrained: ''
+resume_yolox: ''
+# data aug
+flip_prob: 0.5
+hsv_prob: 1.0
+degrees: 10.0
+translate: 0.1
+scale: [0.1, 2]
+shear: 2.0
+perspective: 0.0
+# ========================================================\
+# dataset related
+per_batch_size: 4
+eval_batch_size: 1
+
+# network configuration
+depth_wise: False
+max_gt: 1000
+max_labels: 1000
+mot_max_labels: 500
+num_classes: 1
+input_size: [800, 1440]
+fpn_strides: [8, 16, 32]
+use_l1: False
+use_syc_bn: True
+updates: 0.0
+
+# dynamic_k
+n_candidate_k: 10
+
+# optimizer and lr related
+lr: 0.01  #0.0 # 0.04 for yolox-x
+min_lr_ratio: 0.0005 #第五轮修改为0.0005  #0.001
+warmup_epochs: 1 #第五轮修改为2是76.0 # 第四轮修改为 4的情况下mota:75.9 # 5 
+weight_decay: 0.0005
+momentum: 0.9
+no_aug_epochs: 10
+# logging related
+log_interval: 30
+ckpt_interval: -1
+is_save_on_master: 1
+ckpt_max_num: 60
+opt: "Momentum"
+
+# distributed related
+is_distributed: 1
+rank: 0
+group_size: 1
+bind_cpu: True
+device_num: 8
+
+# modelart
+is_modelArts: 0
+enable_modelarts: False
+
+need_modelarts_dataset_unzip: False
+modelarts_dataset_unzip_name: "mix_mot_ch"
+
+data_url: ""
+train_url: ""
+multi_data_url: ""
+checkpoint_url: ""
+data_path: "/home/work/user-job-dir/inputs/data/"
+output_path: "./"
+load_path: "/home/work/user-job-dir/inputs/data/"
+ckpt_path: '././'
+
+# Eval option
+log_path: "val/outputs/"
+val_ckpt: "/disk0/zjc/bakes/0-63_229.ckpt"
+conf_thre: 0.01
+nms_thre: 0.7
+eval_interval: 10
+run_eval: False
+track_thresh: 0.6
+mot20: False
+match_thresh: 0.9
+track_buffer: 30
+min_box_area: 100
+val_ann: 'val_half.json'
+# modelarts
+is_modelart: False
+result_path: ''
+
+# export option
+file_format: 'MINDIR'
+export_bs: 1
